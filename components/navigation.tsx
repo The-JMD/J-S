@@ -37,9 +37,9 @@ export function Navigation() {
   return (
     <>
       {/* Top Bar */}
-      <div className="w-full bg-teal-500/10 backdrop-blur-sm border-b border-border/20 py-2">
+      <div className="fixed top-0 w-full z-50 bg-teal-500/10 backdrop-blur-sm border-b border-border/20 py-2">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="text-muted-foreground">📧 leila.idrissi@jsfirm.ma | 📞 +212 (0) 537 65 43 21</div>
+          <div className="text-muted-foreground">📧 leila.idrissi@jsfirm.ma | 📞 [REDACTED]</div>
           <div className="text-muted-foreground hidden md:block">Façonner l'avenir du travail depuis 2010</div>
         </div>
       </div>
@@ -49,7 +49,7 @@ export function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8 }}
-        className={`fixed top-7 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-10 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled ? "glass-strong shadow-lg" : "glass"
         }`}
       >
@@ -60,23 +60,22 @@ export function Navigation() {
             className="flex items-center space-x-3 font-bold rounded-md w-[ato] flex-row"
             onClick={() => scrollToSection("hero")}
           >
-<div className="w-16 h-16 overflow-hidden flex items-center justify-center">
-  <img 
-    src="/js-firm-logo.png" 
-    alt="J&S FIRM Logo" 
-    className="w-full h-full object-contain"
-    style={{
-      WebkitMaskImage: "url(/js-firm-logo.png)",
-      WebkitMaskRepeat: "no-repeat",
-      WebkitMaskPosition: "center",
-      WebkitMaskSize: "contain",
-      backgroundColor: "black",   
-      transform: "scale(2)",   
-      transformOrigin: "center"  
-    }}
-  />
-</div>
-
+            <div className="w-16 h-16 overflow-hidden flex items-center justify-center">
+              <img
+                src="/js-firm-logo.png"
+                alt="J&S FIRM Logo"
+                className="w-full h-full object-contain"
+                style={{
+                  WebkitMaskImage: "url(/js-firm-logo.png)",
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                  WebkitMaskSize: "contain",
+                  backgroundColor: "black",
+                  transform: "scale(2)",
+                  transformOrigin: "center",
+                }}
+              />
+            </div>
           </motion.button>
 
           {/* Desktop Navigation Links */}
