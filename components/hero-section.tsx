@@ -147,33 +147,38 @@ export function HeroSection() {
         />
       ))}
 
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mx-auto top-8 px-4 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="glass-strong rounded-3xl p-8 md:p-16 max-w-6xl mx-auto backdrop-blur-2xl border-2 border-white/30 shadow-2xl hover-lift"
         >
-          <div className="mb-10 space-y-4">
-            {floatingPhrases.map((phrase, index) => (
-              <motion.div
-                key={phrase}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.8 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                transition={{
-                  delay: 0.3 + index * 0.15,
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 120,
-                }}
-                className="inline-block mx-2 mb-2 px-6 py-3 glass rounded-full text-sm md:text-base font-semibold border border-teal-200/40 hover:border-teal-300/60 transition-all duration-300 text-teal-700 hover:text-teal-800 shadow-lg hover:shadow-xl"
-              >
-                <Sparkles className="inline w-4 h-4 mr-2 opacity-70" />
-                {phrase}
-              </motion.div>
-            ))}
-          </div>
+         <div className="mb-6 sm:mb-8 md:mb-10 space-y-3 sm:space-y-4">
+  {floatingPhrases.map((phrase, index) => (
+    <motion.div
+      key={phrase}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.85 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      whileHover={{ scale: 1.05, y: -2 }}
+      transition={{
+        delay: 0.3 + index * 0.15,
+        duration: 0.8,
+        type: "spring",
+        stiffness: 120,
+      }}
+      className="inline-block mx-1 sm:mx-2 mb-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 
+                 glass rounded-full text-xs sm:text-sm md:text-base font-semibold 
+                 border border-teal-200/40 hover:border-teal-300/60 
+                 transition-all duration-300 text-teal-700 hover:text-teal-800 
+                 shadow-md hover:shadow-lg md:hover:shadow-xl"
+    >
+      <Sparkles className="inline w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 opacity-70" />
+      {phrase}
+    </motion.div>
+  ))}
+</div>
+
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

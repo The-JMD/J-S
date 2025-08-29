@@ -49,11 +49,11 @@ export function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8 }}
-        className={`fixed top-8 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-7 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled ? "glass-strong shadow-lg" : "glass"
         }`}
       >
-        <div className="container mx-auto px-2 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-1 py-4 flex items-center justify-between">
           {/* Logo - Updated to use cropped logo with transparent background */}
           <motion.button
             whileHover={{ scale: 1.05 }}
