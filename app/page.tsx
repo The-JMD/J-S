@@ -1,6 +1,8 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronUp } from "lucide-react"
 import { LoadingScreen } from "@/components/loading-screen"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
@@ -12,6 +14,8 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
   useEffect(() => {
     let ticking = false
 
@@ -20,6 +24,8 @@ export default function HomePage() {
         requestAnimationFrame(() => {
           const scrolled = window.pageYOffset
           const parallaxElements = document.querySelectorAll(".parallax")
+
+          setShowScrollTop(scrolled > 300)
 
           parallaxElements.forEach((element) => {
             const speed = element.getAttribute("data-speed") || "0.5"
@@ -53,6 +59,10 @@ export default function HomePage() {
     }
   }, [])
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   return (
     <main className="min-h-screen overflow-x-hidden">
       <LoadingScreen />
@@ -64,6 +74,23 @@ export default function HomePage() {
       <ImpactSection />
       <ContactSection />
       <Footer />
+
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-teal-600 hover:bg-teal-700 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group"
+            aria-label="Retour en haut"
+          >
+            <ChevronUp className="h-6 w-6 group-hover:-translate-y-0.5 transition-transform duration-300" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </main>
   )
 }

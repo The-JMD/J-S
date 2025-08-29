@@ -12,10 +12,10 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: "J & S FIRM - Shaping the Future of Work",
+  title: "J&S FIRM - Shaping the Future of Work",
   description:
     "HR Consulting and Business Solutions Designed for Growth. Empowering businesses with innovative human resources strategies and tailored consulting services.",
-  generator: "v0.app",
+  generator: "Duino.app",
   keywords: "HR consulting, business solutions, human resources, organizational development, recruitment, training",
 }
 
