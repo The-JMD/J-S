@@ -64,7 +64,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden pt-36">
       <LoadingScreen />
       <Navigation />
       <HeroSection />
