@@ -13,17 +13,17 @@ export function ApproachSection() {
     {
       icon: Handshake,
       title: "Collaboration",
-      description: "Working together to achieve shared goals",
+      description: "Travailler ensemble pour atteindre des objectifs communs",
     },
     {
       icon: Eye,
-      title: "Transparency",
-      description: "Clear communication and honest feedback",
+      title: "Transparence",
+      description: "Communication claire et retours honnêtes",
     },
     {
       icon: BarChart3,
-      title: "Measurable Impact",
-      description: "Data-driven results you can see and track",
+      title: "Impact Mesurable",
+      description: "Résultats basés sur les données que vous pouvez voir et suivre",
     },
   ]
 
@@ -42,7 +42,9 @@ export function ApproachSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">How We Work</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+            Comment Nous Travaillons
+          </h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -54,12 +56,12 @@ export function ApproachSection() {
             className="glass rounded-2xl p-8"
           >
             <p className="text-lg text-muted-foreground mb-8 text-pretty leading-relaxed">
-              The consulting approach is based on collaboration, transparency, and measurable impact. Each project is
-              tailored to the client's vision, integrating global best practices with local realities.
+              Notre approche de conseil est basée sur la collaboration, la transparence et l'impact mesurable. Chaque
+              projet est adapté à la vision du client, intégrant les meilleures pratiques mondiales aux réalités locales.
             </p>
             <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-              With innovative tools, macro animations, and interactive dashboards, businesses gain clarity and
-              actionable strategies to move forward confidently.
+              Grâce à des outils innovants, des animations macro et des tableaux de bord interactifs, les entreprises
+              gagnent en clarté et obtiennent des stratégies actionnables pour avancer avec confiance.
             </p>
           </motion.div>
 
