@@ -16,21 +16,21 @@ export function ImpactSection() {
       icon: Users,
       value: 200,
       suffix: "+",
-      label: "Clients Served",
+      label: "Clients Servis",
       key: "clients" as keyof typeof counts,
     },
     {
       icon: Award,
       value: 95,
       suffix: "%",
-      label: "Client Retention",
+      label: "Rétention Client",
       key: "retention" as keyof typeof counts,
     },
     {
       icon: Clock,
       value: 10,
       suffix: "+",
-      label: "Years of Experience",
+      label: "Années d'Expérience",
       key: "experience" as keyof typeof counts,
     },
   ]
@@ -74,16 +74,17 @@ export function ImpactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Why Choose Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Pourquoi Nous Choisir</h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed"
           >
-            Partnering with the firm means benefiting from a proven track record of delivering results, a dedicated team
-            of experts, and a commitment to excellence. Clients trust the service for its reliability, innovation, and
-            deep understanding of evolving workplace dynamics.
+            S'associer avec notre cabinet signifie bénéficier d'une expérience avérée dans la livraison de résultats,
+            d'une équipe d'experts dévoués et d'un engagement envers l'excellence. Nos clients nous font confiance pour
+            notre fiabilité, notre innovation et notre profonde compréhension des dynamiques de travail en constante
+            évolution.
           </motion.p>
         </motion.div>
 
