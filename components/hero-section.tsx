@@ -58,51 +58,88 @@ export function HeroSection() {
   ]
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50/30"
+    >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.05)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(71,85,105,0.03)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.08)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(71,85,105,0.05)_0%,transparent_60%)]" />
 
-        {/* Floating geometric elements */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-teal-500/8 rounded-full blur-3xl animate-pulse-slow" />
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-slate-600/5 rounded-full blur-3xl animate-pulse-slow"
-          style={{ animationDelay: "2s" }}
+        {/* Enhanced floating glass elements */}
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            rotate: [0, 5, 0],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+          className="absolute top-1/4 left-1/4 w-80 h-80 glass rounded-full blur-2xl"
         />
-        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-teal-400/10 rounded-full blur-2xl animate-float" />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, -3, 0],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 glass-strong rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            y: [-20, 20, -20],
+            x: [-10, 10, -10],
+            scale: [0.8, 1.2, 0.8],
+          }}
+          transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+          className="absolute top-1/2 left-1/2 w-40 h-40 glass rounded-full blur-xl opacity-40"
+        />
       </div>
 
-      {/* Professional Business Images */}
       <div className="absolute inset-0 parallax" data-speed="0.3">
-        <div className="absolute right-10 top-1/4 w-80 h-60 rounded-2xl overflow-hidden shadow-2xl opacity-15 hover:opacity-25 transition-all duration-700">
+        <motion.div
+          whileHover={{ scale: 1.05, y: -5 }}
+          className="absolute right-10 top-1/4 w-80 h-60 glass-strong rounded-3xl overflow-hidden shadow-2xl opacity-20 hover:opacity-35 transition-all duration-700 border border-white/30"
+        >
           <img
             src="/professional-business-consulting-team-in-modern-of.png"
             alt="Équipe de consultation professionnelle"
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
           />
-        </div>
-        <div className="absolute left-10 bottom-1/4 w-72 h-48 rounded-2xl overflow-hidden shadow-2xl opacity-12 hover:opacity-22 transition-all duration-700">
+          <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent" />
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.05, y: -5 }}
+          className="absolute left-10 bottom-1/4 w-72 h-48 glass-strong rounded-3xl overflow-hidden shadow-2xl opacity-18 hover:opacity-30 transition-all duration-700 border border-white/30"
+        >
           <img
             src="/modern-professional-office-meeting-room-with-glass.png"
             alt="Salle de réunion moderne"
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
           />
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
+        </motion.div>
       </div>
 
-      {[...Array(15)].map((_, i) => (
+      {[...Array(20)].map((_, i) => (
         <motion.div
           key={i}
           initial={{ opacity: 0, y: 100, scale: 0 }}
-          animate={{ opacity: [0.3, 0.6, 0.3], y: 0, scale: 1 }}
+          animate={{
+            opacity: [0.2, 0.6, 0.2],
+            y: [0, -30, 0],
+            scale: [0.5, 1.2, 0.5],
+            rotate: [0, 180, 360],
+          }}
           transition={{
-            delay: i * 0.1,
-            duration: 2,
+            delay: i * 0.15,
+            duration: 4,
             repeat: Number.POSITIVE_INFINITY,
             repeatType: "reverse",
-            repeatDelay: Math.random() * 2,
+            repeatDelay: Math.random() * 3,
+            ease: "easeInOut",
           }}
-          className="absolute w-2 h-2 bg-teal-500/40 rounded-full"
+          className="absolute w-3 h-3 glass rounded-full border border-teal-300/30 shadow-lg"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -112,25 +149,27 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="glass-strong rounded-3xl p-8 md:p-12 max-w-5xl mx-auto backdrop-blur-xl border border-white/20"
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="glass-strong rounded-3xl p-8 md:p-16 max-w-6xl mx-auto backdrop-blur-2xl border-2 border-white/30 shadow-2xl hover-lift"
         >
-          <div className="mb-8 space-y-3">
+          <div className="mb-10 space-y-4">
             {floatingPhrases.map((phrase, index) => (
               <motion.div
                 key={phrase}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.8 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 transition={{
-                  delay: 0.2 + index * 0.2,
+                  delay: 0.3 + index * 0.15,
                   duration: 0.8,
                   type: "spring",
-                  stiffness: 100,
+                  stiffness: 120,
                 }}
-                className="inline-block mx-2 px-4 py-2 bg-teal-50 text-teal-700 rounded-full text-sm md:text-base font-medium border border-teal-200/50 hover:bg-teal-100 transition-colors duration-300"
+                className="inline-block mx-2 mb-2 px-6 py-3 glass rounded-full text-sm md:text-base font-semibold border border-teal-200/40 hover:border-teal-300/60 transition-all duration-300 text-teal-700 hover:text-teal-800 shadow-lg hover:shadow-xl"
               >
+                <Sparkles className="inline w-4 h-4 mr-2 opacity-70" />
                 {phrase}
               </motion.div>
             ))}
@@ -196,19 +235,36 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }} className="inline-block">
+            <motion.div whileHover={{ scale: 1.08, y: -4 }} whileTap={{ scale: 0.95 }} className="inline-block">
               <Button
                 onClick={scrollToServices}
                 size="lg"
-                className="bg-teal-600 hover:bg-teal-700 text-white text-lg px-10 py-6 group shadow-xl hover:shadow-2xl transition-all duration-300 rounded-full border-2 border-teal-500/20"
+                className="glass-strong bg-teal-600/90 hover:bg-teal-700/90 text-white text-lg px-12 py-7 group shadow-2xl hover:shadow-3xl transition-all duration-500 rounded-full border-2 border-teal-400/30 hover:border-teal-300/50 backdrop-blur-sm"
               >
-                <Sparkles className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                <Sparkles className="mr-3 h-6 w-6 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
                 Découvrir Nos Services
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
               </Button>
             </motion.div>
           </motion.div>
         </motion.div>
+
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+          className="absolute -top-10 -right-10 w-32 h-32 glass rounded-full opacity-30 blur-sm"
+        />
+        <motion.div
+          animate={{
+            rotate: [360, 0],
+            scale: [1, 0.9, 1],
+          }}
+          transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+          className="absolute -bottom-10 -left-10 w-24 h-24 glass-strong rounded-full opacity-25 blur-sm"
+        />
       </div>
     </section>
   )

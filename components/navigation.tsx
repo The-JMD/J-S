@@ -60,16 +60,23 @@ export function Navigation() {
             className="flex items-center space-x-3 font-bold rounded-md w-[ato] flex-row"
             onClick={() => scrollToSection("hero")}
           >
-<img 
-  src="/js-firm-logo.png" 
-  alt="J&S FIRM Logo" 
-  className="w-16 h-16 object-cover" 
-  style={{ 
-    objectPosition: "center", // focus on the middle of the logo
-    transform: "scale(1.3)", // zoom in (adjust 1.3 → 2.0 for stronger zoom)
-    background: "transparent"
-  }} 
-/>
+<div className="w-16 h-16 overflow-hidden flex items-center justify-center">
+  <img 
+    src="/js-firm-logo.png" 
+    alt="J&S FIRM Logo" 
+    className="w-full h-full object-contain"
+    style={{
+      WebkitMaskImage: "url(/js-firm-logo.png)",
+      WebkitMaskRepeat: "no-repeat",
+      WebkitMaskPosition: "center",
+      WebkitMaskSize: "contain",
+      backgroundColor: "black",   
+      transform: "scale(2)",   
+      transformOrigin: "center"  
+    }}
+  />
+</div>
+
           </motion.button>
 
           {/* Desktop Navigation Links */}
