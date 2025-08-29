@@ -21,7 +21,7 @@ export function Footer() {
       href: "https://mail.google.com/mail/?view=cm&fs=1&to=leila.idrissi@jsfirm.ma&su=Contact%20depuis%20le%20site%20web",
       label: "Email",
     }, // Updated to open Gmail with pre-filled recipient
-    { icon: Phone, href: "tel:+212537654321", label: "Téléphone" }, // Made phone clickable
+   // { icon: Phone, href: "tel:+212537654321", label: "Téléphone" }, // Made phone clickable
   ]
 
   const footerLinks = [
@@ -99,14 +99,14 @@ export function Footer() {
                   <span className="text-sm">leila.idrissi@jsfirm.ma</span>
                 </motion.a>
 
-                <motion.a
-                  href="tel:+212537654321"
-                  whileHover={{ x: 5 }}
-                  className="flex items-center space-x-3 text-muted-foreground hover:text-teal-600 transition-all duration-300 group"
-                >
-                  <Phone className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm">+212 (0) 537 65 43 21</span>
-                </motion.a>
+              //  <motion.a //
+                 // href="tel:+212537654321"
+                 // whileHover={{ x: 5 }}
+                 // className="flex items-center space-x-3 text-muted-foreground hover:text-teal-600 transition-all duration-300 group"
+              //  >
+             //     <Phone className="h-4 w-4 group-hover:scale-110 transition-transform" />
+             //     <span className="text-sm">+212 (0) 537 65 43 21</span>
+            //    </motion.a>//
 
                 <motion.div
                   whileHover={{ x: 5 }}
