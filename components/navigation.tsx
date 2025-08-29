@@ -54,13 +54,22 @@ export function Navigation() {
         }`}
       >
         <div className="container mx-auto px-2 py-4 flex items-center justify-between">
-          {/* Logo - Updated to use provided logo image */}
+          {/* Logo - Updated to use cropped logo with transparent background */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3 font-bold rounded-md w-[ato] flex-row"
-            onClick={() => scrollToSection("hero")} // Updated to scroll to hero section
+            onClick={() => scrollToSection("hero")}
           >
-            <img src="/js-firm-logo.png" alt="J&S FIRM Logo" className="w-12 h-12 object-contain" />
+<img 
+  src="/js-firm-logo.png" 
+  alt="J&S FIRM Logo" 
+  className="w-16 h-16 object-cover" 
+  style={{ 
+    objectPosition: "center", // focus on the middle of the logo
+    transform: "scale(1.3)", // zoom in (adjust 1.3 → 2.0 for stronger zoom)
+    background: "transparent"
+  }} 
+/>
           </motion.button>
 
           {/* Desktop Navigation Links */}
@@ -125,10 +134,10 @@ export function Navigation() {
               className="fixed top-0 right-0 h-full w-80 glass-strong border-l border-border/20 z-50 md:hidden"
             >
               <div className="p-6 space-y-6">
-                {/* Mobile Logo */}
+                {/* Mobile Logo - Updated to use cropped logo */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <img src="/js-firm-logo.png" alt="J&S FIRM Logo" className="w-10 h-10 object-contain" />
+                    <img src="/js-firm-logo-cropped.png" alt="J&S FIRM Logo" className="w-12 h-12 object-contain" />
                     <span className="text-lg font-bold text-foreground">J & S FIRM</span>
                   </div>
                   <button

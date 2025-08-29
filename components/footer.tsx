@@ -68,9 +68,9 @@ export function Footer() {
               >
                 <div className="relative">
                   <img
-                    src="/js-firm-logo.png"
+                    src="/js-firm-logo-cropped.png"
                     alt="J&S FIRM Logo"
-                    className="w-16 h-16 object-contain group-hover:rotate-6 transition-transform duration-300"
+                    className="w-20 h-20 object-contain group-hover:rotate-6 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-teal-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
