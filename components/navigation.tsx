@@ -27,7 +27,7 @@ export function Navigation() {
   }
 
   const navigationItems = [
-    { label: "Accueil", id: "home" },
+    { label: "Accueil", id: "hero" }, // Updated id to match hero section
     { label: "À Propos", id: "about" },
     { label: "Services", id: "services" },
     { label: "Approche", id: "approach" },
@@ -58,10 +58,9 @@ export function Navigation() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3 font-bold rounded-md w-[ato] flex-row"
-            onClick={() => scrollToSection("home")}
+            onClick={() => scrollToSection("hero")} // Updated to scroll to hero section
           >
             <img src="/js-firm-logo.png" alt="J&S FIRM Logo" className="w-12 h-12 object-contain" />
-            
           </motion.button>
 
           {/* Desktop Navigation Links */}
@@ -165,7 +164,7 @@ export function Navigation() {
                 >
                   <Button
                     onClick={() => scrollToSection("contact")}
-                    className="w-full bg-teal-600 hover:bg-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-teal-600 hover:bg-teal-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 group"
                   >
                     Nous Contacter
                   </Button>
@@ -175,23 +174,6 @@ export function Navigation() {
           </>
         )}
       </AnimatePresence>
-
-      {/* Sticky App Button - Added sticky rounded button at bottom */}
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 2, duration: 0.5 }}
-        className="fixed bottom-6 right-6 z-30"
-      >
-        <motion.div whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-          <Button
-            onClick={() => window.open("#", "_blank")}
-            className="rounded-full w-14 h-14 bg-teal-600 hover:bg-teal-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 group"
-          >
-            <span className="text-lg font-bold group-hover:rotate-12 transition-transform duration-300">📱</span>
-          </Button>
-        </motion.div>
-      </motion.div>
     </>
   )
 }
