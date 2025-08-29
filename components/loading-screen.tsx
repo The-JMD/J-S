@@ -60,7 +60,7 @@ export function LoadingScreen() {
                 transition={{ delay: 0.8, duration: 0.8 }}
                 className="text-lg text-muted-foreground"
               >
-                Enterprise Hub Connection
+                Façonner Votre Avenir
               </motion.p>
 
               {/* Loading Animation */}
