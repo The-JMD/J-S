@@ -127,7 +127,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Téléphone</p>
-                    <p className="text-muted-foreground">+212 (0) 537 65 43 21</p>
+                    <p className="text-muted-foreground">[REDACTED]</p>
                   </div>
                 </motion.div>
 
