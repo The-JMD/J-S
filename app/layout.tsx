@@ -12,11 +12,11 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: "J&S FIRM - Shaping the Future of Work",
+  title: "J&S FIRM - Façonner l'Avenir du Travail",
   description:
-    "HR Consulting and Business Solutions Designed for Growth. Empowering businesses with innovative human resources strategies and tailored consulting services.",
+    "Conseil en RH et Solutions d'Entreprise Conçues pour la Croissance. Nous aidons les entreprises à se développer grâce à des stratégies de ressources humaines innovantes et des services de conseil sur mesure.",
   generator: "Duino.app",
-  keywords: "HR consulting, business solutions, human resources, organizational development, recruitment, training",
+  keywords: "conseil RH, solutions d'entreprise, ressources humaines, développement organisationnel, recrutement, formation",
 }
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={`font-sans ${geist.variable} antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
