@@ -5,24 +5,13 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Linkedin, Twitter, Mail, Phone, ArrowUp, MapPin, Send } from "lucide-react"
+import { Mail, ArrowUp, MapPin, Send } from "lucide-react"
 
 export function Footer() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
   const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
-
-  const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com/company/jsfirm", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/jsfirm", label: "Twitter" },
-    {
-      icon: Mail,
-      href: "https://mail.google.com/mail/?view=cm&fs=1&to=leila.idrissi@jsfirm.ma&su=Contact%20depuis%20le%20site%20web",
-      label: "Email",
-    }, // Updated to open Gmail with pre-filled recipient
-   // { icon: Phone, href: "tel:+212537654321", label: "Téléphone" }, // Made phone clickable
-  ]
 
   const footerLinks = [
     { label: "Politique de Confidentialité", href: "#" },
@@ -58,7 +47,7 @@ export function Footer() {
           transition={{ duration: 0.8 }}
           className="glass-strong rounded-3xl p-10 shadow-2xl border border-white/20"
         >
-          <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 gap-10">
             <div className="lg:col-span-2 md:col-span-2">
               <motion.button
                 onClick={scrollToTop}
@@ -98,16 +87,6 @@ export function Footer() {
                   <Mail className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   <span className="text-sm">leila.idrissi@jsfirm.ma</span>
                 </motion.a>
-
-              //  <motion.a //
-                 // href="tel:+212537654321"
-                 // whileHover={{ x: 5 }}
-                 // className="flex items-center space-x-3 text-muted-foreground hover:text-teal-600 transition-all duration-300 group"
-              //  >
-             //     <Phone className="h-4 w-4 group-hover:scale-110 transition-transform" />
-             //     <span className="text-sm">+212 (0) 537 65 43 21</span>
-            //    </motion.a>//
-
                 <motion.div
                   whileHover={{ x: 5 }}
                   className="flex items-center space-x-3 text-muted-foreground group cursor-pointer"
@@ -141,29 +120,6 @@ export function Footer() {
                     <div className="text-xs text-muted-foreground group-hover:text-teal-500 transition-colors">
                       {service.desc}
                     </div>
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-foreground mb-6 text-lg">Suivez-nous</h4>
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {socialLinks.map((link) => (
-                  <motion.a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center space-x-2 p-3 glass rounded-xl hover:glass-strong hover:bg-teal-500/10 transition-all duration-300 group"
-                    aria-label={link.label}
-                  >
-                    <link.icon className="h-4 w-4 text-muted-foreground group-hover:text-teal-600 transition-colors" />
-                    <span className="text-xs text-muted-foreground group-hover:text-teal-600 transition-colors">
-                      {link.label}
-                    </span>
                   </motion.a>
                 ))}
               </div>
